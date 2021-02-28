@@ -1,4 +1,17 @@
+
 def testFunction(f, testCases):
+    """
+    Applies the given test cases to the given function, and prints the results.
+
+    Parameters
+    ----------
+    f
+        The function to test.
+    testCases
+        List of 2-element tuples each representing a test case.
+        The first element of each tuple is itself a tuple containing the arguments to the function.
+        The second element is the expected result for the specified arguments.
+    """
     print("Testing " + str(f) + "...")
     for testCase in testCases:
         result = f(*testCase[0])
