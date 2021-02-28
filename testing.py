@@ -1,4 +1,3 @@
-
 def testFunction(f, testCases):
     """
     Applies the given test cases to the given function, and prints the results.
