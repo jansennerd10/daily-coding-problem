@@ -59,22 +59,19 @@ void * get(int index) {
     struct node * previous = NULL;
     struct node * next = NULL;
 
-    for(int i = 0; i < index; i++) {
-        if(current == NULL) {
-            /* As is common in C, there's no way to tell whether NULL was
-             * returned because the index didn't exist (as here) or because
-             * NULL was stored as the payload.
-             * 
-             * An idiomatic implementation would either return success/failure
-             * and return the payload via a void ** parameter, or require the
-             * caller to check the error level whenever NULL is returned. */
-            return NULL;
-        }
+    for(int i = 0; i < index && current != NULL; i++) {
         next = (struct node *)(current->pointers ^ (uintptr_t)previous);
         previous = current;
         current = next;
     }
 
+    /* As is common in C, there's no way to tell whether NULL was
+     * returned because the index didn't exist or because NULL was
+     * stored as the payload.
+     * 
+     * An idiomatic implementation would either return success/failure
+     * and return the payload via a void ** parameter, or require the
+     * caller to check the error level whenever NULL is returned. */
     return current == NULL ? NULL : current->payload;
 }
 
