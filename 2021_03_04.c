@@ -96,7 +96,7 @@ int main() {
     add(&b);
     printf("Stored value %d to index [1]\n", b);
     add(&c);
-    printf("Stored value %d to index[2]\n", c);
+    printf("Stored value %d to index [2]\n", c);
     print_retrieve(0);
     print_retrieve(1);
     print_retrieve(2);
