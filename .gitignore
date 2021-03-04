@@ -1,1 +1,5 @@
 __pycache__
+
+# The problem for 2021-03-04 was solved in C.
+# Don't commit the resulting executable.
+2021_03_04
